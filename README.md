@@ -14,5 +14,5 @@
  ### Expected Performance
  We have gone through whole process of this program and got the results locally. These results include two different methods used in prediction. Some of them are as follows:
 
-![Transformer_01](D:\Air_Quality_Prediction\pic\results\Transformer_01.png)![accuracy](D:\Air_Quality_Prediction\pic\accuracy.png)
+![Transformer_01](https://github.com/Shallowgetter/Air_Quality_Prediction/blob/main/pic/accuracy.png)![accuracy](https://github.com/Shallowgetter/Air_Quality_Prediction/blob/main/pic/results/Transformer_01.png)
 

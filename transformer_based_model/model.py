@@ -33,7 +33,7 @@ def evaluate_model(model, test_loader):
     return mse
 
 def main():
-    train_loader, test_loader, scaler, selected_sites = load_train_data()  
+    train_loader, test_loader, scaler, selected_sites = load_train_data()  # 数据加载来自dataset.py
     model = build_model()
     criterion = nn.MSELoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
