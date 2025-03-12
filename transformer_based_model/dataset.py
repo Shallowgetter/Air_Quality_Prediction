@@ -78,7 +78,7 @@ def load_train_data():
         '东城东四', '东城天坛', '西城官园', '西城万寿西宫', '朝阳奥体中心',
         '朝阳农展馆', '海淀万柳', '海淀四季青', '丰台小屯', '丰台云岗', '石景山古城'
     ]
-    data_directory = r'D:\统计建模2024\北京（18年到23年）\111_json'
+    data_directory = r'D:\Air_Quality_Prediction\data\111_json'
     df = read_and_preprocess_data(data_directory, selected_sites)
     scaler = StandardScaler()
     features = df[['PM2.5', 'PM10', 'AQI']].values
@@ -92,7 +92,7 @@ def load_train_data():
     return train_loader, test_loader, scaler, selected_sites
 
 def run_test_predictions(model, scaler, selected_sites):
-    test_directory = r'D:\统计建模2024\北京（18年到23年）\111_test'
+    test_directory = r'D:\Air_Quality_Prediction\data\111_test'
     df_test = read_test_data(test_directory, selected_sites)
     features_test = scaler.transform(df_test[['PM2.5', 'PM10', 'AQI']].values)
     test_dataset = AirQualityDataset(torch.tensor(features_test, dtype=torch.float32), torch.zeros(len(features_test), 3))
@@ -141,7 +141,7 @@ def save_preprocessed_data():
         '东城东四', '东城天坛', '西城官园', '西城万寿西宫', '朝阳奥体中心',
         '朝阳农展馆', '海淀万柳', '海淀四季青', '丰台小屯', '丰台云岗', '石景山古城'
     ]
-    data_directory = r'D:\统计建模2024\北京（18年到23年）\111_json'
+    data_directory = r'D:\Air_Quality_Prediction\data\111_json'
     df = read_and_preprocess_data(data_directory, selected_sites)
     os.makedirs(r'D:\Air_Quality_Prediction\data', exist_ok=True)
     output_path = r'D:\Air_Quality_Prediction\data\on_process\air_quality_data.csv'
